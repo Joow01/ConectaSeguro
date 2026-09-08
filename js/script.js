@@ -352,203 +352,248 @@ function verificarPrivacidade(resposta, botaoClicado) {
 
 const perguntasQuiz = [
 
+    // ========================================
+    // GOLPES DIGITAIS
+    // ========================================
+
     {
         categoria: "Golpes Digitais",
-
         pergunta:
             "Você recebe uma mensagem de um número novo dizendo ser um familiar. A pessoa afirma que trocou de celular e pede um PIX urgente. Qual é a atitude mais segura?",
-
         alternativas: [
-            "Pedir que a pessoa confirme seu nome completo pela própria conversa.",
-            "Fazer um PIX de valor menor primeiro para verificar a situação.",
+            "Pedir que confirme informações pessoais pela própria conversa.",
+            "Fazer um PIX de valor menor para verificar a situação.",
             "Confirmar a identidade do familiar por outro canal antes de transferir.",
-            "Pedir uma foto da pessoa pelo mesmo número antes de decidir."
+            "Pedir uma foto pelo mesmo número antes de decidir."
         ],
-
         correta: 2,
-
         explicacao:
-            "A confirmação deve ser feita por um canal independente, como o número antigo ou outro contato conhecido. Continuar apenas na mesma conversa pode não confirmar quem realmente está do outro lado."
+            "A confirmação deve ser feita por um canal independente, como um número que você já conhece. Fotos e informações pessoais também podem estar disponíveis para um golpista."
     },
-
 
     {
         categoria: "Golpes Digitais",
-
         pergunta:
-            "Você recebe uma ligação aparentemente do seu banco informando uma compra suspeita. A pessoa conhece seu nome e alguns dados e pede que você confirme informações da conta. O que fazer?",
-
+            "Uma pessoa liga dizendo ser funcionária do seu banco. Ela informa que houve uma compra suspeita e conhece seu nome e alguns dados pessoais. O que fazer?",
         alternativas: [
-            "Confirmar somente os dados que a pessoa já mencionou.",
+            "Confirmar somente os dados que ela já conhece.",
             "Encerrar a ligação e procurar o banco pelos canais oficiais.",
             "Continuar a ligação, mas não informar a senha completa.",
-            "Pedir que a pessoa envie uma mensagem para confirmar que trabalha no banco."
+            "Pedir que a pessoa envie uma mensagem confirmando que trabalha no banco."
         ],
-
         correta: 1,
-
         explicacao:
-            "Conhecer alguns dados pessoais não comprova que o contato seja legítimo. O mais seguro é encerrar o contato e procurar a instituição diretamente por um canal oficial."
+            "Conhecer alguns dados pessoais não comprova que o contato seja legítimo. Encerre a ligação e procure o banco por um canal oficial obtido de forma independente."
     },
-
 
     {
         categoria: "Golpes Digitais",
-
         pergunta:
-            "Você recebe por mensagem uma promoção muito vantajosa de uma loja conhecida, acompanhada de um link. Como verificar a oferta com mais segurança?",
-
+            "Você recebe uma promoção muito vantajosa de uma loja conhecida acompanhada de um link. Como verificar a oferta com mais segurança?",
         alternativas: [
-            "Abrir o link e conferir se a página possui o logotipo da loja.",
-            "Encaminhar o link para alguém conhecido e perguntar se parece verdadeiro.",
-            "Acessar a loja por seu aplicativo ou endereço oficial e procurar a promoção.",
-            "Abrir o link, desde que ele tenha sido enviado por alguém conhecido."
+            "Abrir o link e verificar se a página possui o logotipo da loja.",
+            "Perguntar a quem enviou a mensagem se já realizou uma compra.",
+            "Acessar diretamente o aplicativo ou site oficial da loja e procurar a promoção.",
+            "Abrir o link somente se a mensagem tiver sido enviada por alguém conhecido."
         ],
-
         correta: 2,
-
         explicacao:
-            "Em vez de confiar no link recebido, procure a promoção diretamente nos canais oficiais da empresa. Aparência, logotipos ou o remetente da mensagem não garantem que um link seja legítimo."
+            "Links podem levar a páginas falsas muito parecidas com as verdadeiras. É mais seguro acessar o serviço diretamente por seus canais oficiais."
+    },
+
+    {
+        categoria: "Golpes Digitais",
+        pergunta:
+            "Durante uma ligação, um suposto funcionário do banco pede que você instale um aplicativo para que ele possa verificar um problema no seu celular. Qual é a atitude mais segura?",
+        alternativas: [
+            "Instalar, mas fechar os aplicativos do banco antes.",
+            "Instalar somente se o aplicativo estiver disponível na loja oficial.",
+            "Não instalar e entrar em contato com o banco por um canal oficial.",
+            "Instalar e remover o aplicativo assim que o atendimento terminar."
+        ],
+        correta: 2,
+        explicacao:
+            "Aplicativos de acesso remoto ou compartilhamento de tela podem permitir que terceiros vejam ou controlem o aparelho. Não siga esse tipo de orientação recebida em um contato inesperado."
+    },
+
+    {
+        categoria: "Golpes Digitais",
+        pergunta:
+            "Você recebe um boleto que parece ser de uma empresa conhecida. Antes de pagar, percebe que o nome do beneficiário mostrado pelo banco é diferente do esperado. O que fazer?",
+        alternativas: [
+            "Pagar se o valor e a data de vencimento estiverem corretos.",
+            "Não concluir o pagamento e confirmar a cobrança com a empresa por um canal oficial.",
+            "Pagar e guardar o comprovante para contestar posteriormente, se necessário.",
+            "Refazer a leitura do código e pagar se o mesmo beneficiário aparecer novamente."
+        ],
+        correta: 1,
+        explicacao:
+            "Antes de confirmar um pagamento, confira os dados apresentados pelo banco. Um beneficiário inesperado é motivo para interromper a operação e verificar a cobrança."
+    },
+
+    {
+        categoria: "Golpes Digitais",
+        pergunta:
+            "Você recebe uma mensagem dizendo que existe um valor de benefício disponível, mas que precisa atualizar seus dados imediatamente por um link. O que fazer?",
+        alternativas: [
+            "Preencher apenas os dados que o órgão provavelmente já possui.",
+            "Abrir o link apenas para verificar quais informações são solicitadas.",
+            "Procurar o serviço diretamente pelos canais oficiais antes de fornecer qualquer dado.",
+            "Responder à mensagem pedindo mais informações antes de acessar o link."
+        ],
+        correta: 2,
+        explicacao:
+            "Mensagens sobre benefícios ou valores a receber podem ser usadas como isca. Consulte o órgão ou serviço diretamente por seus canais oficiais antes de fornecer informações."
+    },
+
+    {
+        categoria: "Golpes Digitais",
+        pergunta:
+            "Em um local público, você encontra um QR Code oferecendo desconto para pagamento de uma conta. Qual é a atitude mais segura?",
+        alternativas: [
+            "Escanear, pois QR Codes são mais seguros do que links recebidos por mensagem.",
+            "Escanear e continuar se a página aberta tiver aparência profissional.",
+            "Usar o QR Code somente depois de verificar sua origem e conferir os dados antes do pagamento.",
+            "Escanear com a câmera do celular e evitar apenas informar senhas."
+        ],
+        correta: 2,
+        explicacao:
+            "Um QR Code também pode direcionar para páginas ou pagamentos fraudulentos. Verifique sua origem e confira destinatário, valor e demais dados antes de confirmar."
     },
 
 
-    {
-        categoria: "Senhas Seguras",
+    // ========================================
+    // SENHAS E CONTAS
+    // ========================================
 
+    {
+        categoria: "Senhas e Contas",
         pergunta:
             "Você possui várias contas online. Qual estratégia reduz melhor o impacto caso a senha de um serviço seja descoberta?",
-
         alternativas: [
             "Usar uma senha diferente para cada conta.",
-            "Usar a mesma senha e alterar apenas os últimos números.",
-            "Usar duas senhas fortes e alterná-las entre os serviços.",
-            "Manter uma única senha longa para facilitar a memorização."
+            "Usar a mesma senha alterando apenas os números finais.",
+            "Alternar duas senhas fortes entre todos os serviços.",
+            "Usar uma única senha longa para facilitar a memorização."
         ],
-
         correta: 0,
-
         explicacao:
-            "Usar senhas diferentes evita que o vazamento da credencial de um serviço dê acesso imediato às suas outras contas."
+            "Senhas diferentes evitam que o vazamento da senha de um serviço dê acesso imediato às demais contas."
     },
 
-
     {
-        categoria: "Senhas Seguras",
-
+        categoria: "Senhas e Contas",
         pergunta:
             "Qual destas senhas tende a ser mais resistente a tentativas de adivinhação?",
-
         alternativas: [
             "Carlos@1998",
             "Seguranca#2026",
             "Rio-Cafe-Lua-82!",
             "ConectaSeguro123!"
         ],
-
         correta: 2,
-
         explicacao:
-            "Uma senha longa e menos previsível tende a ser mais resistente. Nomes, datas e expressões diretamente relacionadas ao usuário ou ao serviço podem ser mais previsíveis."
+            "Comprimento e imprevisibilidade são importantes. Nomes, datas e expressões diretamente relacionadas à pessoa ou ao serviço podem ser mais previsíveis."
     },
-
 
     {
-        categoria: "Senhas Seguras",
-
+        categoria: "Senhas e Contas",
         pergunta:
-            "Você recebe um código de verificação para entrar em uma conta e, logo depois, alguém do suposto suporte solicita esse código. O que fazer?",
-
+            "Você recebe um código de verificação no celular e, logo depois, alguém do suposto suporte solicita esse código. O que fazer?",
         alternativas: [
-            "Informar o código se a pessoa souber seu nome e e-mail.",
-            "Informar o código somente se o atendimento tiver sido solicitado por você.",
-            "Não compartilhar o código e verificar o acesso diretamente pelo serviço.",
-            "Enviar apenas parte do código e pedir que o suporte confirme o restante."
+            "Informar se você mesmo iniciou o atendimento.",
+            "Informar somente parte do código.",
+            "Não compartilhar o código e verificar a situação diretamente no serviço.",
+            "Perguntar primeiro por que o atendente precisa do código."
         ],
-
         correta: 2,
-
         explicacao:
-            "Códigos de verificação funcionam como uma credencial temporária. Compartilhá-los pode permitir que outra pessoa conclua uma tentativa de acesso à conta."
+            "Códigos de verificação podem permitir a conclusão de um acesso à conta. Não os compartilhe com terceiros."
     },
 
+
+    // ========================================
+    // PRIVACIDADE E DADOS
+    // ========================================
 
     {
         categoria: "Privacidade e Dados",
-
         pergunta:
-            "Um aplicativo de lanterna solicita acesso aos contatos, microfone, localização e arquivos. Qual é a melhor atitude?",
-
+            "Ao contratar um serviço pela internet, existe uma opção autorizando o uso dos seus dados para receber ofertas de empresas parceiras. Essa autorização não é necessária para concluir a contratação. O que fazer?",
         alternativas: [
-            "Autorizar os acessos porque eles podem ser necessários em futuras atualizações.",
-            "Verificar quais permissões têm relação com a função do aplicativo e recusar as desnecessárias.",
-            "Autorizar inicialmente e remover as permissões apenas se o aplicativo apresentar comportamento estranho.",
-            "Autorizar apenas enquanto o aplicativo estiver aberto, independentemente da finalidade de cada permissão."
+            "Autorizar, pois empresas parceiras podem ser consideradas confiáveis.",
+            "Avaliar se deseja esse uso dos dados e não autorizar automaticamente.",
+            "Autorizar e cancelar somente se começar a receber muitas ofertas.",
+            "Autorizar desde que seja possível cancelar posteriormente."
         ],
-
         correta: 1,
-
         explicacao:
-            "As permissões devem ter relação com as funções utilizadas. Mesmo um acesso temporário pode ser desnecessário se o aplicativo não precisa daquele dado para funcionar."
+            "Quando um uso adicional dos dados não é necessário para o serviço, avalie se realmente deseja autorizá-lo e para qual finalidade seus dados serão utilizados."
     },
-
 
     {
         categoria: "Privacidade e Dados",
-
         pergunta:
-            "Ao criar uma conta em um serviço, alguns campos são opcionais e solicitam informações adicionais. Qual prática protege melhor seus dados?",
-
+            "Ao preencher um cadastro, vários campos de informações pessoais aparecem como opcionais. Qual prática protege melhor seus dados?",
         alternativas: [
-            "Preencher todos os campos para deixar o cadastro mais completo.",
-            "Fornecer os dados opcionais quando forem informações fáceis de lembrar.",
-            "Avaliar a finalidade e fornecer somente os dados necessários para utilizar o serviço.",
-            "Preencher os campos opcionais com os mesmos dados usados em outros serviços."
+            "Preencher tudo para deixar o cadastro completo.",
+            "Preencher os campos opcionais que sejam fáceis de lembrar.",
+            "Avaliar a finalidade e fornecer somente os dados necessários.",
+            "Utilizar as mesmas informações fornecidas em outros serviços."
         ],
-
         correta: 2,
-
         explicacao:
-            "Reduzir o fornecimento desnecessário de dados diminui a quantidade de informações associadas ao cadastro. Campos opcionais devem ser avaliados de acordo com sua finalidade."
+            "Evitar o fornecimento desnecessário de informações reduz a quantidade de dados pessoais armazenados e compartilhados."
     },
-
 
     {
         categoria: "Privacidade e Dados",
-
         pergunta:
             "Um site solicita uma foto do seu documento para liberar determinada funcionalidade. Antes de enviar, qual é a atitude mais adequada?",
-
         alternativas: [
             "Verificar quem solicita o documento, por que ele é necessário e como será utilizado.",
-            "Enviar apenas um dos lados do documento para reduzir o risco.",
-            "Enviar a imagem com resolução menor para impedir o uso indevido.",
-            "Enviar o documento se o site apresentar uma aparência profissional."
+            "Enviar somente um dos lados do documento.",
+            "Enviar uma foto com resolução menor.",
+            "Enviar se o site tiver aparência profissional."
         ],
-
         correta: 0,
-
         explicacao:
-            "Antes de fornecer um documento, é importante avaliar a legitimidade do serviço, a necessidade da coleta e a finalidade do uso. Aparência do site ou alterações na imagem não substituem essa verificação."
+            "Documentos contêm dados importantes. Antes do envio, verifique a legitimidade do serviço, a necessidade da solicitação e a finalidade do uso."
     },
 
 
+    // ========================================
+    // COMPORTAMENTO SEGURO
+    // ========================================
+
     {
-        categoria: "Segurança Digital",
-
+        categoria: "Comportamento Seguro",
         pergunta:
-            "Uma mensagem parece legítima, mas cria urgência e pede que você tome uma decisão envolvendo dinheiro ou dados. Qual princípio é mais seguro?",
-
+            "Uma mensagem parece legítima e possui seu nome completo, mas cria urgência para que você faça um pagamento imediatamente. O que é mais seguro?",
         alternativas: [
-            "Responder rapidamente, mas fornecer apenas parte das informações solicitadas.",
-            "Seguir as instruções se a mensagem apresentar dados pessoais corretos.",
-            "Parar, verificar a solicitação por um canal confiável e só então decidir.",
-            "Continuar a conversa até reunir informações suficientes sobre o remetente."
+            "Confiar porque a pessoa conhece seus dados.",
+            "Realizar um pagamento menor primeiro.",
+            "Parar e verificar a solicitação por um canal confiável antes de agir.",
+            "Continuar conversando até o remetente fornecer mais informações."
         ],
-
         correta: 2,
-
         explicacao:
-            "Urgência pode ser usada para reduzir o tempo de reflexão. Verificar a solicitação por um canal confiável antes de agir ajuda a evitar decisões baseadas apenas na mensagem recebida."
+            "Ter informações pessoais não prova que o remetente seja legítimo. Golpistas podem obter dados de diferentes fontes. Urgência é um motivo para verificar antes de agir."
+    },
+
+    {
+        categoria: "Comportamento Seguro",
+        pergunta:
+            "Você recebe uma mensagem suspeita e não consegue determinar se é verdadeira. Qual atitude representa melhor uma regra geral de segurança digital?",
+        alternativas: [
+            "Responder para obter mais informações antes de tomar uma decisão.",
+            "Seguir as instruções que não envolvam diretamente uma senha.",
+            "Parar, conferir a situação por uma fonte confiável e só depois agir.",
+            "Encaminhar a mensagem para conhecidos e seguir a opinião da maioria."
+        ],
+        correta: 2,
+        explicacao:
+            "Quando houver dúvida, não é necessário decidir imediatamente. Pare, procure uma fonte confiável e independente e só depois tome uma decisão."
     }
 
 ];
@@ -774,8 +819,24 @@ function mostrarResultado() {
         .classList.remove("quiz-escondido");
 
 
+    // Calcula o percentual de acertos
+    const percentual =
+        (pontosQuiz / perguntasQuiz.length) * 100;
+
+
+    // Mostra a pontuação final
     document.getElementById("notaFinal").textContent =
         pontosQuiz;
+
+
+    // Atualiza o total de questões automaticamente
+    const totalFinal =
+        document.getElementById("totalFinal");
+
+    if (totalFinal) {
+      totalFinal.textContent =
+        ` / ${perguntasQuiz.length}`;
+    }
 
 
     const titulo =
@@ -791,7 +852,7 @@ function mostrarResultado() {
         document.getElementById("recomendacaoResultado");
 
 
-    if (pontosQuiz >= 9) {
+    if (percentual >= 90) {
 
         icone.textContent = "🏆";
 
@@ -803,13 +864,19 @@ function mostrarResultado() {
 
         recomendacao.innerHTML = `
             <strong>Continue assim!</strong>
+
             <p>
                 Mantenha esses cuidados no seu dia a dia e
                 compartilhe o que aprendeu com familiares e amigos.
             </p>
+
+            <p>
+                <strong>🛡️ Pare. Confira. Só depois aja.</strong>
+            </p>
         `;
 
-    } else if (pontosQuiz >= 7) {
+
+    } else if (percentual >= 70) {
 
         icone.textContent = "👏";
 
@@ -821,15 +888,21 @@ function mostrarResultado() {
 
         recomendacao.innerHTML = `
             <strong>Vale revisar:</strong>
+
             <p>
                 Dê mais uma olhada nos conteúdos de
                 <a href="golpes.html">Golpes</a>,
                 <a href="senhas.html">Senhas</a> e
                 <a href="privacidade.html">Privacidade</a>.
             </p>
+
+            <p>
+                <strong>🛡️ Pare. Confira. Só depois aja.</strong>
+            </p>
         `;
 
-    } else if (pontosQuiz >= 5) {
+
+    } else if (percentual >= 50) {
 
         icone.textContent = "📚";
 
@@ -841,11 +914,17 @@ function mostrarResultado() {
 
         recomendacao.innerHTML = `
             <strong>Recomendação:</strong>
+
             <p>
                 Revise os conteúdos antes de tentar novamente.
                 Pequenos cuidados podem fazer uma grande diferença.
             </p>
+
+            <p>
+                <strong>🛡️ Pare. Confira. Só depois aja.</strong>
+            </p>
         `;
+
 
     } else {
 
@@ -858,7 +937,8 @@ function mostrarResultado() {
             "Alguns conceitos importantes ainda precisam ser revisados.";
 
         recomendacao.innerHTML = `
-            <strong>Não tem problema.</strong>
+            <strong>Recomendação:</strong>
+
             <p>
                 Volte aos módulos de
                 <a href="golpes.html">Golpes Digitais</a>,
@@ -866,8 +946,11 @@ function mostrarResultado() {
                 <a href="privacidade.html">Privacidade</a>
                 e depois tente novamente.
             </p>
-        `;
 
+            <p>
+                <strong>🛡️ Pare. Confira. Só depois aja.</strong>
+            </p>
+        `;
     }
 
 
@@ -877,6 +960,14 @@ function mostrarResultado() {
             block: "center"
         });
 }
+
+
+    document.getElementById("quizResultado")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
 
 
 /* Reiniciar */

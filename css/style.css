@@ -34,7 +34,7 @@ body {
 ======================================== */
 
 header {
-    background-color: #0b5d4b;
+    background-color: #198754;
     color: white;
     padding: 20px 0;
 }
@@ -66,7 +66,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-    background-color: #084638;
+    background-color: #157347;
 }
 
 
@@ -81,7 +81,7 @@ nav a:focus {
 }
 
 .hero h2 {
-    color: #0b5d4b;
+    color: #157347;
     font-size: 46px;
     margin-bottom: 20px;
 }
@@ -99,7 +99,7 @@ nav a:focus {
 
 .botao {
     display: inline-block;
-    background-color: #0b5d4b;
+    background-color: #146c43;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -113,7 +113,7 @@ nav a:focus {
 
 .botao:hover,
 .botao:focus {
-    background-color: #084638;
+    background-color: #146c43;
     transform: translateY(-2px);
 }
 
@@ -128,7 +128,7 @@ nav a:focus {
 
 .conteudos h2 {
     text-align: center;
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 34px;
     margin-bottom: 40px;
 }
@@ -160,7 +160,7 @@ nav a:focus {
 }
 
 .card h3 {
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 24px;
     margin-bottom: 15px;
 }
@@ -172,7 +172,7 @@ nav a:focus {
 .card a {
     display: inline-block;
 
-    background-color: #0b5d4b;
+    background-color: #146c43;
     color: white;
 
     font-weight: bold;
@@ -186,7 +186,7 @@ nav a:focus {
 
 .card a:hover,
 .card a:focus {
-    background-color: #084638;
+    background-color: #146c43;
     text-decoration: none;
 }
 
@@ -202,7 +202,7 @@ nav a:focus {
 }
 
 .quiz h2 {
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 34px;
     margin-bottom: 15px;
 }
@@ -289,7 +289,7 @@ a:focus {
 }
 
 .pagina-topo h2 {
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 42px;
     margin-bottom: 15px;
 }
@@ -308,12 +308,12 @@ a:focus {
 }
 
 .fundo-claro {
-    background-color: #eef3f5;
+    background-color: #e8f5ee;
 }
 
 .titulo-secao {
     text-align: center;
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 32px;
     margin-bottom: 40px;
 }
@@ -375,7 +375,7 @@ a:focus {
 
     padding: 18px 22px;
 
-    border-left: 5px solid #0b5d4b;
+    border-left: 5px solid #146c43;
     border-radius: 6px;
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -416,7 +416,7 @@ a:focus {
 
     border-radius: 50%;
 
-    background-color: #0b5d4b;
+    background-color: #146c43;
     color: white;
 
     font-size: 24px;
@@ -424,7 +424,7 @@ a:focus {
 }
 
 .passo h3 {
-    color: #0b5d4b;
+    color: #146c43;
     margin-bottom: 10px;
 }
 
@@ -518,7 +518,7 @@ a:focus {
 }
 
 .remetente {
-    color: #0b5d4b;
+    color: #146c43;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -568,12 +568,12 @@ a:focus {
 }
 
 .segura {
-    background-color: #0b5d4b;
+    background-color: #146c43;
     color: white;
 }
 
 .segura:hover {
-    background-color: #084638;
+    background-color: #146c43;
 }
 
 
@@ -643,11 +643,11 @@ a:focus {
 
 .alerta-verde {
     background-color: #e3f2ed;
-    border-left-color: #0b5d4b;
+    border-left-color: #146c43;
 }
 
 .alerta-verde h2 {
-    color: #0b5d4b;
+    color: #146c43;
 }
 
 
@@ -720,7 +720,7 @@ a:focus {
 }
 
 .bloco-2fa h2 {
-    color: #0b5d4b;
+    color: #146c43;
     margin-bottom: 10px;
 }
 
@@ -772,7 +772,7 @@ a:focus {
 
 .campo-senha input:focus {
     outline: 3px solid #ffbf47;
-    border-color: #0b5d4b;
+    border-color: #146c43;
 }
 
 .campo-senha button {
@@ -916,7 +916,7 @@ a:focus {
 }
 
 .bloco-privacidade h3 {
-    color: #0b5d4b;
+    color: #146c43;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -1008,7 +1008,7 @@ a:focus {
 }
 
 .quiz-inicio h2 {
-    color: #0b5d4b;
+    color: #146c43;
     margin-bottom: 15px;
 }
 
@@ -1074,7 +1074,7 @@ a:focus {
     height: 100%;
     width: 10%;
 
-    background-color: #0b5d4b;
+    background-color: #146c43;
 
     transition: width 0.3s;
 }
@@ -1086,7 +1086,7 @@ a:focus {
     display: inline-block;
 
     background-color: #e3f2ed;
-    color: #0b5d4b;
+    color: #146c43;
 
     padding: 6px 12px;
 
@@ -1139,7 +1139,7 @@ a:focus {
 }
 
 .alternativa-quiz:hover:not(:disabled) {
-    border-color: #0b5d4b;
+    border-color: #146c43;
     background-color: #f1f8f5;
 }
 
@@ -1207,7 +1207,7 @@ a:focus {
 }
 
 #quizResultado h2 {
-    color: #0b5d4b;
+    color: #146c43;
 }
 
 .nota-quiz {
@@ -1219,7 +1219,7 @@ a:focus {
 
     font-weight: bold;
 
-    color: #0b5d4b;
+    color: #146c43;
 }
 
 .nota-quiz small {
@@ -1258,7 +1258,7 @@ a:focus {
 }
 
 .recomendacao-quiz a {
-    color: #0b5d4b;
+    color: #146c43;
 
     font-weight: bold;
 }
@@ -1412,4 +1412,22 @@ nav a.ativo {
 .opcao-golpe.escolha-errada {
     background-color: #c0392b;
     border-color: #962d22;
+}
+
+/* ========================================
+   AJUSTES - RESULTADO DO QUIZ
+======================================== */
+
+/* Mais espaço entre a recomendação e os botões */
+#recomendacaoResultado {
+    margin-bottom: 26px;
+}
+
+/* Destaca a regra principal de segurança */
+#recomendacaoResultado p:last-child {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    text-align: center;
+    font-size: 1.05rem;
 }
