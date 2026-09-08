@@ -1442,3 +1442,23 @@ nav a.ativo {
 .logo-link:hover {
     opacity: 0.9;
 }
+
+/* ========================================
+   LOGO CLICÁVEL
+======================================== */
+
+a.logo,
+a.logo:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.logo:hover {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+a.logo:active {
+    color: #ffffff;
+}
