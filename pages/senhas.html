@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Senhas Seguras | Conecta Seguro</title>
+
+    <meta name="description"
+          content="Aprenda a criar senhas mais seguras e proteger suas contas na internet.">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>🛡️ Conecta Seguro</h1>
+
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="golpes.html">Golpes</a>
+            <a href="senhas.html" class="ativo" aria-current="page">Senhas</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- Introdução -->
+    <section class="pagina-topo">
+        <div class="container">
+
+            <span class="pagina-icone">🔐</span>
+
+            <h2>Senhas Seguras</h2>
+
+            <p>
+                Uma boa senha ajuda a impedir que outras pessoas
+                tenham acesso às suas contas e informações pessoais.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Regra principal -->
+    <section class="secao">
+        <div class="container">
+
+            <div class="alerta-importante alerta-verde">
+
+                <span>🔑</span>
+
+                <div>
+                    <h2>Uma senha para cada conta</h2>
+
+                    <p>
+                        Evite utilizar a mesma senha no e-mail, redes sociais,
+                        banco e outros serviços. Se uma senha for descoberta,
+                        as outras contas continuarão protegidas.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Como criar -->
+    <section class="secao fundo-claro">
+        <div class="container">
+
+            <h2 class="titulo-secao">
+                Como criar uma senha mais segura?
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <span class="icone">📏</span>
+
+                    <h3>Use senhas longas</h3>
+
+                    <p>
+                        Quanto maior a senha, mais difícil ela tende a ser
+                        de descobrir. Prefira senhas ou frases longas.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <span class="icone">🔀</span>
+
+                    <h3>Evite senhas previsíveis</h3>
+
+                    <p>
+                        Não utilize sequências como 123456, datas de
+                        aniversário, nomes ou informações fáceis de descobrir.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <span class="icone">🧩</span>
+
+                    <h3>Use combinações</h3>
+
+                    <p>
+                        Combine diferentes palavras e, quando necessário,
+                        letras, números e símbolos para aumentar a segurança.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Exemplos -->
+    <section class="secao">
+        <div class="container">
+
+            <h2 class="titulo-secao">
+                Compare os exemplos
+            </h2>
+
+            <div class="comparacao-senhas">
+
+                <div class="senha-exemplo senha-ruim">
+
+                    <span>❌</span>
+
+                    <div>
+                        <h3>Senha fraca</h3>
+                        <p class="senha-demo">maria123</p>
+                        <p>
+                            Usa um nome comum e uma sequência fácil
+                            de tentar.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="senha-exemplo senha-boa">
+
+                    <span>✅</span>
+
+                    <div>
+                        <h3>Senha mais forte</h3>
+                        <p class="senha-demo">Cafe-Verde-Ponte-82!</p>
+                        <p>
+                            É longa e combina palavras que podem ser
+                            mais difíceis de adivinhar.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="aviso-exemplo">
+                ⚠️ Estes são apenas exemplos. Não utilize essas senhas
+                em suas contas.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Verificação em duas etapas -->
+    <section class="secao fundo-claro">
+        <div class="container">
+
+            <div class="bloco-2fa">
+
+                <span class="pagina-icone">📲</span>
+
+                <div>
+                    <h2>Ative a verificação em duas etapas</h2>
+
+                    <p>
+                        Quando disponível, ative a verificação em duas etapas.
+                        Assim, além da senha, sua conta exige uma segunda
+                        confirmação para permitir o acesso.
+                    </p>
+
+                    <p>
+                        <strong>Importante:</strong>
+                        códigos de confirmação recebidos por SMS, aplicativo
+                        ou e-mail não devem ser enviados para outras pessoas.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Testador -->
+    <section class="secao teste-senha">
+
+        <div class="container">
+
+            <h2 class="titulo-secao">
+                🧪 Teste uma senha de exemplo
+            </h2>
+
+            <p class="atividade-introducao">
+                Digite uma senha fictícia para verificar alguns
+                critérios básicos de segurança.
+            </p>
+
+            <div class="testador-senha">
+
+                <label for="senhaTeste">
+                    Digite uma senha de exemplo:
+                </label>
+
+                <div class="campo-senha">
+
+                    <input
+                        type="password"
+                        id="senhaTeste"
+                        placeholder="Digite aqui"
+                        autocomplete="off"
+                        oninput="analisarSenha()">
+
+                    <button
+                        type="button"
+                        id="mostrarSenha"
+                        onclick="alternarSenha()">
+                        👁️ Mostrar
+                    </button>
+
+                </div>
+
+
+                <div class="barra-forca">
+                    <div id="nivelSenha"></div>
+                </div>
+
+                <p id="textoForca" class="texto-forca">
+                    Digite uma senha para começar.
+                </p>
+
+
+                <div class="criterios">
+
+                    <p id="criterioTamanho">
+                        ○ Pelo menos 12 caracteres
+                    </p>
+
+                    <p id="criterioMaiuscula">
+                        ○ Pelo menos uma letra maiúscula
+                    </p>
+
+                    <p id="criterioMinuscula">
+                        ○ Pelo menos uma letra minúscula
+                    </p>
+
+                    <p id="criterioNumero">
+                        ○ Pelo menos um número
+                    </p>
+
+                    <p id="criterioSimbolo">
+                        ○ Pelo menos um símbolo
+                    </p>
+
+                </div>
+
+
+                <div class="privacidade-teste">
+                    🔒 <strong>Privacidade:</strong>
+                    este teste funciona somente no seu navegador.
+                    A senha digitada não é enviada nem armazenada pelo
+                    Conecta Seguro.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resumo -->
+    <section class="secao resumo-seguranca">
+        <div class="container">
+
+            <h2 class="titulo-secao">
+                Lembre-se
+            </h2>
+
+            <div class="lista-seguranca">
+
+                <div>✓ Prefira senhas longas e difíceis de adivinhar.</div>
+
+                <div>✓ Não reutilize a mesma senha em várias contas.</div>
+
+                <div>✓ Nunca compartilhe suas senhas.</div>
+
+                <div>✓ Ative a verificação em duas etapas quando disponível.</div>
+
+                <div>✓ Desconfie de quem pedir sua senha ou código de confirmação.</div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Próxima página -->
+    <section class="proxima-aula">
+        <div class="container">
+
+            <p>
+                Agora vamos aprender a proteger suas informações pessoais.
+            </p>
+
+            <a class="botao" href="privacidade.html">
+                Próximo: Privacidade →
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <p>Conecta Seguro — Educação e Segurança Digital</p>
+        <p>Projeto de Extensão</p>
+    </div>
+</footer>
+
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

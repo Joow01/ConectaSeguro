@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | Conecta Seguro</title>
+
+    <meta name="description"
+          content="Teste seus conhecimentos sobre segurança digital com o quiz do Conecta Seguro.">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>🛡️ Conecta Seguro</h1>
+
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="golpes.html">Golpes</a>
+            <a href="senhas.html">Senhas</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="quiz.html" class="ativo" aria-current="page">Quiz</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="pagina-topo">
+        <div class="container">
+
+            <span class="pagina-icone">🧠</span>
+
+            <h2>Quiz de Segurança Digital</h2>
+
+            <p>
+                Responda às 10 perguntas e descubra o quanto
+                você aprendeu sobre segurança na internet.
+            </p>
+
+        </div>
+    </section>
+
+
+    <section class="secao quiz-pagina">
+        <div class="container">
+
+            <!-- Tela inicial -->
+            <div id="quizInicio" class="quiz-box quiz-inicio">
+
+                <span class="quiz-icone">🎯</span>
+
+                <h2>Preparado para começar?</h2>
+
+                <p>
+                    O quiz possui 10 perguntas sobre golpes digitais,
+                    senhas e privacidade.
+                </p>
+
+                <p>
+                    Leia cada situação com atenção e escolha
+                    a alternativa que considerar mais segura.
+                </p>
+
+                <button
+                    type="button"
+                    class="botao botao-sem-borda"
+                    onclick="iniciarQuiz()">
+                    Começar Quiz
+                </button>
+
+            </div>
+
+
+            <!-- Perguntas -->
+            <div id="quizPergunta" class="quiz-box quiz-escondido">
+
+                <div class="quiz-progresso">
+
+                    <span id="contadorPergunta">
+                        Pergunta 1 de 10
+                    </span>
+
+                    <span id="pontuacaoAtual">
+                        Pontos: 0
+                    </span>
+
+                </div>
+
+
+                <div class="barra-quiz">
+                    <div id="progressoQuiz"></div>
+                </div>
+
+
+                <p id="categoriaQuiz" class="categoria-quiz">
+                    Golpes Digitais
+                </p>
+
+                <h2 id="textoPergunta">
+                    Pergunta
+                </h2>
+
+
+                <div id="alternativasQuiz" class="alternativas-quiz">
+                </div>
+
+
+                <div
+                    id="feedbackQuiz"
+                    class="feedback-quiz"
+                    aria-live="polite">
+                </div>
+
+
+                <button
+                    type="button"
+                    id="botaoProxima"
+                    class="botao botao-proxima quiz-escondido"
+                    onclick="proximaPergunta()">
+                    Próxima pergunta →
+                </button>
+
+            </div>
+
+
+            <!-- Resultado -->
+            <div id="quizResultado" class="quiz-box quiz-escondido">
+
+                <span id="iconeResultado" class="quiz-icone">
+                    🏆
+                </span>
+
+                <h2>Resultado do Quiz</h2>
+
+                <div class="nota-quiz">
+                    <span id="notaFinal">0</span>
+                    <small>/ 10</small>
+                </div>
+
+                <h3 id="tituloResultado"></h3>
+
+                <p id="mensagemResultado"></p>
+
+
+                <div id="recomendacaoResultado"
+                     class="recomendacao-quiz">
+                </div>
+
+
+                <div class="acoes-resultado">
+
+                    <button
+                        type="button"
+                        class="botao botao-sem-borda"
+                        onclick="reiniciarQuiz()">
+                        🔄 Refazer Quiz
+                    </button>
+
+                    <a class="botao botao-secundario"
+                       href="../index.html">
+                        🏠 Voltar ao início
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <p>Conecta Seguro — Educação e Segurança Digital</p>
+        <p>Projeto de Extensão</p>
+    </div>
+</footer>
+
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

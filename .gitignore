@@ -1,0 +1,13 @@
+# PyCharm / JetBrains
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Node.js
+node_modules/
