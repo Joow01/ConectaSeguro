@@ -1363,4 +1363,53 @@ nav a.ativo {
     }
 }
 
+/* Opção neutra da atividade de privacidade */
 
+/* Alternativas neutras da atividade de privacidade */
+
+.opcao-privacidade {
+    background-color: #455a64;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.opcao-privacidade:hover {
+    background-color: #34444b;
+}
+
+.opcao-privacidade.escolha-correta {
+    background-color: #27823b;
+    border-color: #176528;
+}
+
+.opcao-privacidade.escolha-errada {
+    background-color: #c0392b;
+    border-color: #962d22;
+}
+
+/* ========================================
+   ATIVIDADE - GOLPES
+======================================== */
+
+.opcao-golpe {
+    background-color: #455a64;
+    color: white;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.opcao-golpe:hover {
+    background-color: #34444b;
+    transform: translateY(-2px);
+}
+
+.opcao-golpe.escolha-correta {
+    background-color: #27823b;
+    border-color: #176528;
+}
+
+.opcao-golpe.escolha-errada {
+    background-color: #c0392b;
+    border-color: #962d22;
+}

@@ -265,47 +265,59 @@
             Leia a situação abaixo e escolha o que você faria.
         </p>
 
-        <div class="situacao">
+       <div class="situacao">
 
-            <div class="mensagem-simulada">
+    <div class="mensagem-simulada">
 
-                <p class="remetente">📱 Número desconhecido</p>
-
-                <p>
-                    "Oi mãe, troquei de número. Meu celular antigo estragou.
-                    Preciso pagar uma conta urgente. Você consegue fazer
-                    um PIX para mim?"
-                </p>
-
-            </div>
-
-            <h3>O que você faria?</h3>
-
-            <div class="opcoes">
-
-                <button
-                    type="button"
-                    class="opcao perigo"
-                    onclick="verificarResposta(false)">
-                    💸 Fazer o PIX
-                </button>
-
-                <button
-                    type="button"
-                    class="opcao segura"
-                    onclick="verificarResposta(true)">
-                    📞 Confirmar com o familiar
-                </button>
-
-            </div>
-
-            <div
-                id="resultado"
-                class="resultado"
-                aria-live="polite">
-            </div>
-
+        <div class="mensagem-remetente">
+            📱 <strong>Número desconhecido</strong>
         </div>
+
+        <p>
+            "Oi mãe, troquei de número. Meu celular antigo estragou.
+            Preciso pagar uma conta urgente. Você consegue fazer um PIX
+            para mim?"
+        </p>
+
+    </div>
+
+
+    <h3>O que você faria?</h3>
+
+
+    <div class="opcoes opcoes-golpe">
+
+        <button
+            type="button"
+            class="opcao opcao-golpe"
+            onclick="verificarResposta('pix', this)">
+            A) Faria o PIX para ajudar rapidamente
+        </button>
+
+        <button
+            type="button"
+            class="opcao opcao-golpe"
+            onclick="verificarResposta('conversa', this)">
+            B) Pediria mais informações pela própria conversa
+        </button>
+
+        <button
+            type="button"
+            class="opcao opcao-golpe"
+            onclick="verificarResposta('confirmar', this)">
+            C) Confirmaria com o familiar por outro canal
+        </button>
+
+    </div>
+
+
+    <div
+        id="resultado"
+        class="resultado"
+        aria-live="polite">
+    </div>
+
+</div>
 
     </div>
 </section>

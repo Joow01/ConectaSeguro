@@ -1,45 +1,111 @@
-function verificarResposta(respostaSegura) {
+function verificarResposta(resposta, botaoClicado) {
 
     const resultado = document.getElementById("resultado");
 
-    if (respostaSegura) {
+    const botoes =
+        document.querySelectorAll(".opcao-golpe");
 
-        resultado.className = "resultado resultado-correto";
+    if (!resultado) {
+        return;
+    }
+
+
+    // Remove o destaque da escolha anterior
+    botoes.forEach((botao) => {
+
+        botao.classList.remove(
+            "escolha-correta",
+            "escolha-errada"
+        );
+
+    });
+
+
+    // C) Confirmar por outro canal
+    if (resposta === "confirmar") {
+
+        botaoClicado.classList.add("escolha-correta");
+
+        resultado.className =
+            "resultado resultado-correto";
 
         resultado.innerHTML = `
             <h3>✅ Muito bem!</h3>
 
             <p>
-                Essa é a atitude mais segura. Antes de enviar dinheiro,
-                entre em contato com seu familiar pelo número que você
-                já conhece.
+                Essa é a atitude mais segura. Um número novo pode realmente
+                pertencer ao seu familiar, mas também pode ser alguém
+                tentando se passar por ele.
             </p>
 
             <p>
-                <strong>Lembre-se:</strong> um pedido urgente vindo de
-                um número novo deve sempre ser confirmado.
+                O ideal é confirmar a identidade por outro canal,
+                como ligar para o número que você já conhece ou entrar
+                em contato pessoalmente com o familiar.
+            </p>
+
+            <p>
+                <strong>Lembre-se:</strong>
+                confirme a identidade antes de realizar qualquer
+                transferência.
             </p>
         `;
 
+
+    // B) Continuar conversando
+    } else if (resposta === "conversa") {
+
+        botaoClicado.classList.add("escolha-errada");
+
+        resultado.className =
+            "resultado resultado-errado";
+
+        resultado.innerHTML = `
+            <h3>⚠️ Parece uma boa ideia, mas ainda há risco.</h3>
+
+            <p>
+                Pedir mais informações pode ajudar, porém um golpista
+                pode ter obtido dados sobre você ou seu familiar e
+                conseguir responder às perguntas.
+            </p>
+
+            <p>
+                Continuar apenas pela mesma conversa não confirma
+                com segurança quem está do outro lado.
+            </p>
+
+            <p>
+                <strong>Melhor alternativa:</strong>
+                confirme a identidade utilizando outro canal de contato.
+            </p>
+        `;
+
+
+    // A) Fazer o PIX
     } else {
 
-        resultado.className = "resultado resultado-errado";
+        botaoClicado.classList.add("escolha-errada");
+
+        resultado.className =
+            "resultado resultado-errado";
 
         resultado.innerHTML = `
             <h3>⚠️ Cuidado!</h3>
 
             <p>
-                Fazer o PIX imediatamente pode colocar seu dinheiro em risco.
-                Esse é um golpe muito comum.
+                Fazer a transferência imediatamente é arriscado.
+                A urgência pode ser utilizada para fazer você agir
+                antes de verificar quem está realmente pedindo o dinheiro.
             </p>
 
             <p>
-                <strong>O mais seguro:</strong> não faça a transferência
-                antes de confirmar com seu familiar por outro meio.
+                <strong>Melhor alternativa:</strong>
+                antes de fazer qualquer PIX, confirme a identidade
+                do familiar utilizando outro canal.
             </p>
         `;
-
     }
+
 
     resultado.scrollIntoView({
         behavior: "smooth",
@@ -179,17 +245,31 @@ function alternarSenha() {
     }
 }
 
-function verificarPrivacidade(respostaSegura) {
+function verificarPrivacidade(resposta, botaoClicado) {
 
     const resultado =
         document.getElementById("resultadoPrivacidade");
+
+    const botoes =
+        document.querySelectorAll(".opcao-privacidade");
 
     if (!resultado) {
         return;
     }
 
+    // Limpa os estilos anteriores
+    botoes.forEach((botao) => {
+        botao.classList.remove(
+            "escolha-correta",
+            "escolha-errada",
+            "escolha-desativada"
+        );
+    });
 
-    if (respostaSegura) {
+
+    if (resposta === "verificar") {
+
+        botaoClicado.classList.add("escolha-correta");
 
         resultado.className =
             "resultado resultado-correto";
@@ -198,40 +278,67 @@ function verificarPrivacidade(respostaSegura) {
             <h3>✅ Boa escolha!</h3>
 
             <p>
-                Evitar essa publicação ajuda a proteger informações
-                sobre sua rotina e sua residência.
+                Antes de conceder uma permissão, é importante verificar
+                se aquele acesso realmente é necessário para a função
+                do aplicativo.
             </p>
 
             <p>
-                <strong>Uma opção mais segura:</strong>
-                se quiser compartilhar fotos da viagem,
-                considere publicá-las depois de retornar e evite
-                divulgar informações desnecessárias sobre sua casa.
+                Um aplicativo de lanterna, por exemplo, normalmente
+                não precisa acessar seus contatos, microfone ou arquivos.
+            </p>
+
+            <p>
+                <strong>Lembre-se:</strong>
+                conceda somente as permissões necessárias.
             </p>
         `;
 
-    } else {
+    } else if (resposta === "revisarDepois") {
+
+        botaoClicado.classList.add("escolha-errada");
 
         resultado.className =
             "resultado resultado-errado";
 
         resultado.innerHTML = `
-            <h3>⚠️ Pense novamente!</h3>
+            <h3>⚠️ Ainda não é a melhor opção.</h3>
 
             <p>
-                Essa publicação informa publicamente que a residência
-                poderá ficar vazia durante vários dias.
+                Revisar permissões depois é melhor do que nunca revisá-las,
+                mas o ideal é avaliar cada solicitação antes de permitir
+                o acesso aos seus dados.
             </p>
 
             <p>
                 <strong>Melhor alternativa:</strong>
-                evite divulgar detalhes sobre sua ausência e considere
-                compartilhar as fotos somente depois da viagem.
+                conceda somente as permissões necessárias desde o início.
             </p>
         `;
 
-    }
+    } else {
 
+        botaoClicado.classList.add("escolha-errada");
+
+        resultado.className =
+            "resultado resultado-errado";
+
+        resultado.innerHTML = `
+            <h3>⚠️ Cuidado com seus dados!</h3>
+
+            <p>
+                Permitir todos os acessos automaticamente pode dar ao
+                aplicativo acesso a informações que não são necessárias
+                para seu funcionamento.
+            </p>
+
+            <p>
+                <strong>Melhor alternativa:</strong>
+                analise cada permissão e autorize somente aquilo
+                que realmente faz sentido.
+            </p>
+        `;
+    }
 
     resultado.scrollIntoView({
         behavior: "smooth",
@@ -249,19 +356,19 @@ const perguntasQuiz = [
         categoria: "Golpes Digitais",
 
         pergunta:
-            "Você recebe uma mensagem de um número novo dizendo ser um familiar e pedindo um PIX urgente. O que deve fazer?",
+            "Você recebe uma mensagem de um número novo dizendo ser um familiar. A pessoa afirma que trocou de celular e pede um PIX urgente. Qual é a atitude mais segura?",
 
         alternativas: [
-            "Fazer o PIX rapidamente.",
-            "Confirmar com o familiar por outro meio.",
-            "Enviar seus dados bancários.",
-            "Responder pedindo a chave PIX."
+            "Pedir que a pessoa confirme seu nome completo pela própria conversa.",
+            "Fazer um PIX de valor menor primeiro para verificar a situação.",
+            "Confirmar a identidade do familiar por outro canal antes de transferir.",
+            "Pedir uma foto da pessoa pelo mesmo número antes de decidir."
         ],
 
-        correta: 1,
+        correta: 2,
 
         explicacao:
-            "Pedidos de dinheiro vindos de números novos devem ser confirmados diretamente com a pessoa por outro meio."
+            "A confirmação deve ser feita por um canal independente, como o número antigo ou outro contato conhecido. Continuar apenas na mesma conversa pode não confirmar quem realmente está do outro lado."
     },
 
 
@@ -269,19 +376,19 @@ const perguntasQuiz = [
         categoria: "Golpes Digitais",
 
         pergunta:
-            "Uma pessoa liga dizendo ser funcionária do banco e pede sua senha. Qual é a atitude mais segura?",
+            "Você recebe uma ligação aparentemente do seu banco informando uma compra suspeita. A pessoa conhece seu nome e alguns dados e pede que você confirme informações da conta. O que fazer?",
 
         alternativas: [
-            "Informar a senha para confirmar sua identidade.",
-            "Enviar a senha por mensagem.",
-            "Encerrar o contato e procurar o banco pelos canais oficiais.",
-            "Passar somente parte da senha."
+            "Confirmar somente os dados que a pessoa já mencionou.",
+            "Encerrar a ligação e procurar o banco pelos canais oficiais.",
+            "Continuar a ligação, mas não informar a senha completa.",
+            "Pedir que a pessoa envie uma mensagem para confirmar que trabalha no banco."
         ],
 
-        correta: 2,
+        correta: 1,
 
         explicacao:
-            "Senhas são pessoais. Diante de um contato suspeito, procure o banco utilizando um canal oficial."
+            "Conhecer alguns dados pessoais não comprova que o contato seja legítimo. O mais seguro é encerrar o contato e procurar a instituição diretamente por um canal oficial."
     },
 
 
@@ -289,139 +396,139 @@ const perguntasQuiz = [
         categoria: "Golpes Digitais",
 
         pergunta:
-            "Você recebe um link dizendo que ganhou um prêmio, mas precisa pagar uma taxa para recebê-lo. O que fazer?",
+            "Você recebe por mensagem uma promoção muito vantajosa de uma loja conhecida, acompanhada de um link. Como verificar a oferta com mais segurança?",
 
         alternativas: [
-            "Pagar rapidamente para não perder o prêmio.",
-            "Enviar o link para outras pessoas.",
-            "Informar seus dados para descobrir se é verdadeiro.",
-            "Não clicar nem pagar e verificar a informação em canais oficiais."
-        ],
-
-        correta: 3,
-
-        explicacao:
-            "Prêmios inesperados acompanhados de pedidos de dinheiro ou dados pessoais são um importante sinal de alerta."
-    },
-
-
-    {
-        categoria: "Senhas Seguras",
-
-        pergunta:
-            "Qual destas opções representa uma prática mais segura para suas contas?",
-
-        alternativas: [
-            "Usar a mesma senha em todas as contas.",
-            "Usar senhas diferentes para contas diferentes.",
-            "Usar apenas seu primeiro nome como senha.",
-            "Compartilhar a senha com amigos."
-        ],
-
-        correta: 1,
-
-        explicacao:
-            "Senhas diferentes reduzem o risco de várias contas serem comprometidas caso uma senha seja descoberta."
-    },
-
-
-    {
-        categoria: "Senhas Seguras",
-
-        pergunta:
-            "Qual destas senhas seria, em geral, mais difícil de adivinhar?",
-
-        alternativas: [
-            "123456",
-            "maria2026",
-            "senha123",
-            "Rio-Cafe-Lua-82!"
-        ],
-
-        correta: 3,
-
-        explicacao:
-            "Senhas longas e menos previsíveis tendem a ser mais resistentes do que sequências comuns, nomes ou datas."
-    },
-
-
-    {
-        categoria: "Senhas Seguras",
-
-        pergunta:
-            "Alguém pede o código de confirmação que acabou de chegar por SMS no seu celular. O que você deve fazer?",
-
-        alternativas: [
-            "Enviar o código.",
-            "Não compartilhar o código.",
-            "Publicar o código para pedir ajuda.",
-            "Enviar apenas metade do código."
-        ],
-
-        correta: 1,
-
-        explicacao:
-            "Códigos de confirmação protegem o acesso às suas contas e não devem ser compartilhados."
-    },
-
-
-    {
-        categoria: "Privacidade",
-
-        pergunta:
-            "Você vai viajar e sua casa ficará vazia. Qual atitude é mais cuidadosa nas redes sociais?",
-
-        alternativas: [
-            "Publicar imediatamente que ficará 10 dias fora.",
-            "Publicar seu endereço junto com as fotos.",
-            "Evitar divulgar publicamente detalhes sobre sua ausência.",
-            "Compartilhar sua localização em tempo real."
+            "Abrir o link e conferir se a página possui o logotipo da loja.",
+            "Encaminhar o link para alguém conhecido e perguntar se parece verdadeiro.",
+            "Acessar a loja por seu aplicativo ou endereço oficial e procurar a promoção.",
+            "Abrir o link, desde que ele tenha sido enviado por alguém conhecido."
         ],
 
         correta: 2,
 
         explicacao:
-            "Evitar divulgar detalhes sobre sua ausência reduz a exposição desnecessária de informações sobre sua rotina e residência."
+            "Em vez de confiar no link recebido, procure a promoção diretamente nos canais oficiais da empresa. Aparência, logotipos ou o remetente da mensagem não garantem que um link seja legítimo."
     },
 
 
     {
-        categoria: "Privacidade",
+        categoria: "Senhas Seguras",
 
         pergunta:
-            "Um aplicativo pede acesso à sua câmera, microfone, contatos e localização. O que é mais adequado?",
+            "Você possui várias contas online. Qual estratégia reduz melhor o impacto caso a senha de um serviço seja descoberta?",
 
         alternativas: [
-            "Permitir tudo automaticamente.",
-            "Verificar quais permissões são realmente necessárias.",
-            "Desativar a senha do celular.",
-            "Enviar seus documentos para o aplicativo."
+            "Usar uma senha diferente para cada conta.",
+            "Usar a mesma senha e alterar apenas os últimos números.",
+            "Usar duas senhas fortes e alterná-las entre os serviços.",
+            "Manter uma única senha longa para facilitar a memorização."
         ],
 
-        correta: 1,
+        correta: 0,
 
         explicacao:
-            "É importante avaliar se cada permissão realmente é necessária para a função que você deseja utilizar."
+            "Usar senhas diferentes evita que o vazamento da credencial de um serviço dê acesso imediato às suas outras contas."
     },
 
 
     {
-        categoria: "Privacidade",
+        categoria: "Senhas Seguras",
 
         pergunta:
-            "Qual destas informações exige maior cuidado antes de ser enviada pela internet?",
+            "Qual destas senhas tende a ser mais resistente a tentativas de adivinhação?",
 
         alternativas: [
-            "Sua cor favorita.",
-            "O nome de um filme.",
-            "Uma foto do seu documento de identidade.",
-            "O nome de uma música."
+            "Carlos@1998",
+            "Seguranca#2026",
+            "Rio-Cafe-Lua-82!",
+            "ConectaSeguro123!"
         ],
 
         correta: 2,
 
         explicacao:
-            "Documentos contêm dados pessoais que podem ser utilizados indevidamente e devem ser compartilhados somente quando necessário e com destinatários legítimos."
+            "Uma senha longa e menos previsível tende a ser mais resistente. Nomes, datas e expressões diretamente relacionadas ao usuário ou ao serviço podem ser mais previsíveis."
+    },
+
+
+    {
+        categoria: "Senhas Seguras",
+
+        pergunta:
+            "Você recebe um código de verificação para entrar em uma conta e, logo depois, alguém do suposto suporte solicita esse código. O que fazer?",
+
+        alternativas: [
+            "Informar o código se a pessoa souber seu nome e e-mail.",
+            "Informar o código somente se o atendimento tiver sido solicitado por você.",
+            "Não compartilhar o código e verificar o acesso diretamente pelo serviço.",
+            "Enviar apenas parte do código e pedir que o suporte confirme o restante."
+        ],
+
+        correta: 2,
+
+        explicacao:
+            "Códigos de verificação funcionam como uma credencial temporária. Compartilhá-los pode permitir que outra pessoa conclua uma tentativa de acesso à conta."
+    },
+
+
+    {
+        categoria: "Privacidade e Dados",
+
+        pergunta:
+            "Um aplicativo de lanterna solicita acesso aos contatos, microfone, localização e arquivos. Qual é a melhor atitude?",
+
+        alternativas: [
+            "Autorizar os acessos porque eles podem ser necessários em futuras atualizações.",
+            "Verificar quais permissões têm relação com a função do aplicativo e recusar as desnecessárias.",
+            "Autorizar inicialmente e remover as permissões apenas se o aplicativo apresentar comportamento estranho.",
+            "Autorizar apenas enquanto o aplicativo estiver aberto, independentemente da finalidade de cada permissão."
+        ],
+
+        correta: 1,
+
+        explicacao:
+            "As permissões devem ter relação com as funções utilizadas. Mesmo um acesso temporário pode ser desnecessário se o aplicativo não precisa daquele dado para funcionar."
+    },
+
+
+    {
+        categoria: "Privacidade e Dados",
+
+        pergunta:
+            "Ao criar uma conta em um serviço, alguns campos são opcionais e solicitam informações adicionais. Qual prática protege melhor seus dados?",
+
+        alternativas: [
+            "Preencher todos os campos para deixar o cadastro mais completo.",
+            "Fornecer os dados opcionais quando forem informações fáceis de lembrar.",
+            "Avaliar a finalidade e fornecer somente os dados necessários para utilizar o serviço.",
+            "Preencher os campos opcionais com os mesmos dados usados em outros serviços."
+        ],
+
+        correta: 2,
+
+        explicacao:
+            "Reduzir o fornecimento desnecessário de dados diminui a quantidade de informações associadas ao cadastro. Campos opcionais devem ser avaliados de acordo com sua finalidade."
+    },
+
+
+    {
+        categoria: "Privacidade e Dados",
+
+        pergunta:
+            "Um site solicita uma foto do seu documento para liberar determinada funcionalidade. Antes de enviar, qual é a atitude mais adequada?",
+
+        alternativas: [
+            "Verificar quem solicita o documento, por que ele é necessário e como será utilizado.",
+            "Enviar apenas um dos lados do documento para reduzir o risco.",
+            "Enviar a imagem com resolução menor para impedir o uso indevido.",
+            "Enviar o documento se o site apresentar uma aparência profissional."
+        ],
+
+        correta: 0,
+
+        explicacao:
+            "Antes de fornecer um documento, é importante avaliar a legitimidade do serviço, a necessidade da coleta e a finalidade do uso. Aparência do site ou alterações na imagem não substituem essa verificação."
     },
 
 
@@ -429,19 +536,19 @@ const perguntasQuiz = [
         categoria: "Segurança Digital",
 
         pergunta:
-            "Quando uma mensagem causa medo ou exige uma decisão imediata, qual é uma boa regra?",
+            "Uma mensagem parece legítima, mas cria urgência e pede que você tome uma decisão envolvendo dinheiro ou dados. Qual princípio é mais seguro?",
 
         alternativas: [
-            "Agir rapidamente sem conferir.",
-            "Clicar no primeiro link recebido.",
-            "Parar, pensar e verificar a informação.",
-            "Enviar seus dados para resolver mais rápido."
+            "Responder rapidamente, mas fornecer apenas parte das informações solicitadas.",
+            "Seguir as instruções se a mensagem apresentar dados pessoais corretos.",
+            "Parar, verificar a solicitação por um canal confiável e só então decidir.",
+            "Continuar a conversa até reunir informações suficientes sobre o remetente."
         ],
 
         correta: 2,
 
         explicacao:
-            "Criar urgência é uma técnica comum em golpes. Parar e verificar antes de agir pode evitar muitas fraudes."
+            "Urgência pode ser usada para reduzir o tempo de reflexão. Verificar a solicitação por um canal confiável antes de agir ajuda a evitar decisões baseadas apenas na mensagem recebida."
     }
 
 ];
