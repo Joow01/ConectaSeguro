@@ -1431,3 +1431,14 @@ nav a.ativo {
     text-align: center;
     font-size: 1.05rem;
 }
+
+/* Logo clicável */
+.logo-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
